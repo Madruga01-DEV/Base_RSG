@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blaze Scripts EntityInfo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="propinfo" v-show="isVisible">
+            <div class="header">
+                <h2>Entity Information</h2>
+                <div class="status">ACTIVE</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">ENTITY</div>
+                <div class="value">{{ entityInfo.entity || '-' }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">TYPE</div>
+                <div class="value">{{ entityInfo.type || '-' }}</div>
+            </div>
+
+            <div class="info-row">
+                <div class="label">NETWORK ID</div>
+                <div class="value">{{ entityInfo.networkId || '-' }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">MODEL HASH</div>
+                <div class="value">{{ entityInfo.hashStr || '-' }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">COORDINATES</div>
+                <div class="value">{{ formatCoords(entityInfo.coords) }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">ROTATION</div>
+                <div class="value">{{ formatCoords(entityInfo.rotation) }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="label">HEADING</div>
+                <div class="value">{{ formatHeading(entityInfo.heading) }}</div>
+            </div>
+            
+            <div class="controls">
+                <div><span class="key">G</span> Copy model hash</div>
+                <div><span class="key">E</span> Copy coordinates</div>
+                <div><span class="key">R</span> Copy rotation</div>
+                <div><span class="key">J</span> Copy heading</div>
+                <div><span class="key">Z</span> Copy all info</div>
+                <div><span class="key">Space</span> Toggle display</div>
+            </div>
+        </div>
+        
+        <div class="no-entity" v-show="showNoEntity">
+            No entity detected - aim at an object
+        </div>
+        
+        <div class="copy-flash" v-show="showCopyFlash">{{ copyMessage }}</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

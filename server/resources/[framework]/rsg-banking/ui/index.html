@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>RSG Banking</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+    <body>
+        <div class="menu" id="bankmenu">
+            <div class="head">Conta Bancária</div>
+            <div class="topline"></div>
+            <div class="content">
+                <span class="label">Saldo Bancário</span><br/>
+                <span class="balance"></span><br/><br/>
+                <span class="label">Dinheiro em Mãos</span><br/>
+                <span class="cash"></span>
+            </div>
+            <div class="topline"></div>
+            <br/>
+            <button id="button" class="withdraw">Sacar</button>
+            <button id="button" class="deposit">Depositar</button>
+            <button id="button" class="moneyclip">Criar Maço de Dinheiro</button>
+            <button id="button" class="safedeposit">Cofre Pessoal</button>
+            <button id="button" class="close">Fechar</button>
+        </div>
+
+        <div class="menu" id="transactionmenu">
+            <div class="head" id="transhead">Conta Bancária</div>
+            <div class="topline"></div>
+            <div class="content">
+                <span class="label">Saldo Atual</span><br/>
+                <span class="balance"></span><br/>
+                <span class="charge"></span>
+            </div>
+            <div class="topline"></div>
+            <br/>
+            <input type="number" id="amount" placeholder="$ Valor">
+            <button id="button" class="transact"></button>
+            <button id="button" class="back">Voltar</button>
+        </div>
+
+        <div id="toast"></div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>
